@@ -1,0 +1,10 @@
+print("Welcome to tip Calculator....")
+bill=input("How much is the bill?: ")
+bill_as_int=int(bill)
+tip=input("How much do you want to tip 10 , 12 or 15 ?")
+tip_as_int=int(tip)
+total_bill=bill_as_int+(tip_as_int/100)*bill_as_int
+print(f"Total bill is : {total_bill}")
+people=input("Enter number of ways you want to split")
+per_person=total_bill/int(people)
+print(f"Bill Per Person is : {per_person}")
