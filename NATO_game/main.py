@@ -22,13 +22,24 @@
 
 
 
-
+#
 import pandas
 
 data=pandas.read_csv("nato_phonetic_alphabet.csv")
 phonetic_dict={row.letter:row.code for (index,row) in data.iterrows()}
-# print(phonetic_dict)
+    # print(phonetic_dict)
 
-word=input("Enter a word: ").upper()
-output=[phonetic_dict[letter] for letter in word]
-print(output)
+
+def generate_phonetic():
+    word = input("Enter a word: ").upper()
+    try:
+        output=[phonetic_dict[letter] for letter in word]
+    except KeyError:
+        print("Invalid")
+        generate_phonetic()
+    else:
+        print(output)
+
+generate_phonetic()
+
+
